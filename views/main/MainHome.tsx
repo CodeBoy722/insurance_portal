@@ -1,8 +1,9 @@
+import { Button, Icon, Text } from "@rneui/themed";
 import { useState } from "react";
 import { StatusBar, StatusBarStyle, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const PhoneLogin = () => {
+const MainHome = () => {
   const STYLES = ["default", "dark-content", "light-content"] as const;
   const TRANSITIONS = ["fade", "slide", "none"] as const;
 
@@ -15,64 +16,36 @@ const PhoneLogin = () => {
   >(TRANSITIONS[0]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         animated={true}
-        backgroundColor="#FFFFFF"
+        //backgroundColor="#FFFFFF"
         barStyle={statusBarStyle}
         showHideTransition={statusBarTransition}
-        hidden={hidden}
+        //hidden={hidden}
       />
 
-      <View style={styles.MainView}>
 
-
-      </View>
+      
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-  
-    MainView: {
-        backgroundColor: "#34cceb",
-        height: "40%",
-        width: "90%",
-      },
-  });
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    marginTop: 16,
+  },
 
-  export default PhoneLogin;
+  MainView: {
+    height: "100%",
+    width: "90%",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default MainHome;
